@@ -21,7 +21,7 @@ def create_presigned_post(bucket_name, object_name,
     :return: None if error.
     """
 
-    session = boto3.Session(profile_name="familyrosetree")
+    session = boto3.Session(profile_name="")
     s3_client = session.client('s3')    # TODO: is it ok to use this in prod provided access key and secret access key are *secret* (session length?)
 
     try:

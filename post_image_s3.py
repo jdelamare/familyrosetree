@@ -16,17 +16,3 @@ def send_request(bucket_name, object_name, conditions, object_path=None):
         print(http_response)
     # If successful, returns HTTP status code 204
     logging.info(f'File upload HTTP status code: {http_response.status_code}')
-
-
-
-bucket_name = os.getenv('')
-object_name = f''
-object_path = f''
-
-fields = {'Content-Type': 'png'}
-
-# file has 10mb max
-conditions = [['content-length-range', 	0, 10000000],
-               ['Content-Type', 'png']]
-
-send_request(bucket_name, object_name, conditions, object_path=object_path)
